@@ -7,6 +7,6 @@ File Name | Description
 ElectoCookie_Enclosure_V3 | Base box and lid for ElectroCookie/WLED controller
 ElecroCooke_Enclosure_V3_Top_Tabs | Same as above but with top/bottom mounting tabs
 ElectroCookie_Enclosure_V3_w_Tabs | Same as above but with side mounting tabs
-PIR_Sensor_Box_Tall | Base enclosure for D1 Mini and AM312 PIR Sensor
+TOF_Sensor_Box_Tall | Base enclosure for D1 Mini and AM312 PIR Sensor
 
 (Click any of the .stl files above to see a preview).
