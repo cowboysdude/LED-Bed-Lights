@@ -4,9 +4,7 @@ This folder contains the YAML code for the ESPHome Motion Detectors.
 
 ### IMPORTANT UPDATE NOTE:
 
-This directory contains two sets of files for ESPHome.  One set is for the original PIR-based motion sensors.  The other set (suffixed with -tof) are for the updated time-of-flight distance sensors.  These were an upgrade for my system with open ended stairs at the bottom.  You can see the difference between the the two in [this YouTube video](https://youtu.be/ZRb_wpJo1AM).
-
-You can mix and match between the PIR and TOF sensors, but should only use one top sensor and one bottom sensor.  The rest of this readme applies regardless of the type of sensor you select.
+This directory contains the files for ESPHome.  The set (suffixed with -tof) are for the time-of-flight distance sensors.    You can see the difference between the the two in [this YouTube video](https://youtu.be/ZRb_wpJo1AM).
 
 #### The rest of the information here applies to either type of sensor, unless otherwise noted
 
