@@ -1,5 +1,5 @@
 # LED-Stair-Lights
-Home Assistant and ESPHome code for motion-activated stair lighting system
+Home Assistant and ESPHome code for motion-activated stair lighting system.
 Modified to be used under my bed :)
 
 ![StairLights_Thumb2](https://user-images.githubusercontent.com/55962781/175975288-5ebef9e0-de67-41ae-b89a-86c036ef3958.jpg)
