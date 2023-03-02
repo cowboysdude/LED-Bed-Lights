@@ -1,5 +1,8 @@
 # Home Assistant Files
 
+# Before you start
+This is the modified version of Resinchem stair lights.  I have modified this to work for under a bed.  If you'd like you can compare both by going to [Original code](https://github.com/Resinchem/LED-Stair-Lights) and seeing what I've changed to make this work for my instance.   He's done an excellent job creating all of this.  Thank you for the help!!!
+
 These folders contain all the necessary files for the motion-activated stair lighting system.  However, which files you need will depend on how you have Home Assistant configured and your comfort level with YAML files.
 
 1. If you'd prefer not to mess with YAML at all, then I have a YouTube video [Recreate a YAML automation using the Home Assistant Automation Editor](https://youtu.be/F3YjWCs7Czc) that will walk you through the steps to create the necessary automations and helpers for the stair lights using the Home Assistant UI editor.  You will still need to create a couple of sections in your ESPHome code for the motion detectors (see the ESPHome folder for details), but that is the only YAML you will have to write (and you can just copy/paste that from the code provided).
