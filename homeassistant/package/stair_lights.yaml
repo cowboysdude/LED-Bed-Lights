@@ -17,7 +17,7 @@
 # -----------------------
 #  Timers
 # -----------------------
-timer: 
+timer:
   stair_motion_timer:
 
 # -----------------------
@@ -28,7 +28,7 @@ input_boolean:
     name: Stair Auto LEDs
     initial: on
     icon: mdi:car-turbocharger
-    
+
 # ============================
 #  AUTOMATIONS
 # ============================
@@ -42,48 +42,45 @@ automation:
     trigger:
       platform: state
       entity_id: binary_sensor.stair_motion_top
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     condition:
       - condition: state
         entity_id: input_boolean.stair_auto_leds
         state: "on"
       - condition: state
         entity_id: light.stair_lights
-        state: 'off'
+        state: "off"
     action:
       - service: number.set_value
         data:
           entity_id: number.stairs_speed
-          value: '220'
-      - service: switch.turn_on
-        data:
-          entity_id: switch.stairs_reverse
+          value: "220"
       - service: light.turn_on
         data:
           entity_id: light.stair_lights
-          rgb_color: [255,255,255]
-          brightness: 128
-          effect: "Wipe"
+          rgb_color: [247, 229, 148]
+          brightness: 55
+          effect: "Solid"
       - service: timer.start
         data:
           entity_id: timer.stair_motion_timer
-          duration: '00:00:15'
+          duration: "00:00:20"
 
-# ---------------------------------
-# Stair Lights Off with Top Motion
-# ---------------------------------
+  # ---------------------------------
+  # Stair Lights Off with Top Motion
+  # ---------------------------------
   - alias: Top Motion Lights Off
     id: c7874887-564f-4fe0-a74d-cf600d0904b6
     trigger:
       platform: state
       entity_id: binary_sensor.stair_motion_top
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     condition:
       - condition: state
         entity_id: light.stair_lights
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: input_boolean.stair_auto_leds
         state: "on"
@@ -91,56 +88,53 @@ automation:
       - service: light.turn_off
         entity_id: light.stair_lights
 
-# -------------------------------------
-# Stair Lights On with Bottom Motion
-# -------------------------------------
+  # -------------------------------------
+  # Stair Lights On with Bottom Motion
+  # -------------------------------------
   - alias: Bottom Motion Lights On
     id: 2dd26972-8611-42fa-baff-b60797cc49cd
     trigger:
       platform: state
       entity_id: binary_sensor.stair_motion_bottom
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     condition:
       - condition: state
         entity_id: input_boolean.stair_auto_leds
         state: "on"
       - condition: state
         entity_id: light.stair_lights
-        state: 'off'
+        state: "off"
     action:
       - service: number.set_value
         data:
           entity_id: number.stairs_speed
-          value: '220'
-      - service: switch.turn_off
-        data:
-          entity_id: switch.stairs_reverse
+          value: "220"
       - service: light.turn_on
         data:
           entity_id: light.stair_lights
-          rgb_color: [255,255,255]
-          brightness: 128
-          effect: "Wipe"
+          rgb_color: [247, 229, 148]
+          brightness: 55
+          effect: "Solid"
       - service: timer.start
         data:
           entity_id: timer.stair_motion_timer
-          duration: '00:00:15'
+          duration: "00:00:20"
 
-# ------------------------------------
-# Stair Lights Off with Bottom Motion
-# ------------------------------------
+  # ------------------------------------
+  # Stair Lights Off with Bottom Motion
+  # ------------------------------------
   - alias: Bottom Motion Lights Off
     id: a6551382-9c7c-4ad8-ba5b-16ebd1b2f980
     trigger:
       platform: state
       entity_id: binary_sensor.stair_motion_bottom
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     condition:
       - condition: state
         entity_id: light.stair_lights
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: input_boolean.stair_auto_leds
         state: "on"
@@ -148,9 +142,9 @@ automation:
       - service: light.turn_off
         entity_id: light.stair_lights
 
-# ------------------------------
-# Stair Timer Expiration
-# ------------------------------
+  # ------------------------------
+  # Stair Timer Expiration
+  # ------------------------------
   - alias: Stair Timer Expires
     id: f4417cbc-8222-4c10-afd1-338502ad0fbb
     trigger:
@@ -162,10 +156,10 @@ automation:
       # Assure no motion occuring
       - condition: state
         entity_id: binary_sensor.stair_motion_top
-        state: 'off'
+        state: "off"
       - condition: state
         entity_id: binary_sensor.stair_motion_bottom
-        state: 'off'
+        state: "off"
     action:
       # Reset and turn off lights
       - service: light.turn_off
